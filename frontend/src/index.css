@@ -9,3 +9,26 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+html {
+  scrollbar-color: initial; /* Reset the global style */
+}
+
+/* dark mode looking scrollbar */
+/* not working, being overriden */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #555;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #121212;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #242424;
+}
