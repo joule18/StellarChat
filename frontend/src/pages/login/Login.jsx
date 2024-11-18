@@ -1,7 +1,7 @@
 const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
-      <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+      <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-10">
         <h1 className="text-3xl font-semibold text-center text-gray-300">
           Login <span className="text-blue-500">StellarChat</span>
         </h1>
@@ -37,7 +37,7 @@ const Login = () => {
             {"Don't"} have an account?
           </a>
           <div>
-            <button className="btn btn-block btn-sm mt-2 bg-slate-900 hover:bg-slate-800 text-slate-200 border-none">
+            <button className="btn btn-block btn-sm mt-4 bg-slate-950 hover:bg-slate-900 text-slate-200 border-none">
               Login
             </button>
           </div>
