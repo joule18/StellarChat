@@ -60,8 +60,32 @@ const signup = async (req, res) => {
     res.status(500).json({ error: "Internal server error." });
   }
 };
-const login = (req, res) => {
-  res.send("loginUser");
+const login = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    const user = await User.findOne({ username });
+    const isPasswordCorrect = await bcrypt.compare(
+      password,
+      user?.password || ""
+    );
+
+    if (!user || !isPasswordCorrect) {
+      return res.status(400).json({ error: "Incorrect login information." });
+    }
+
+    generateTokenAndSetCookie(user._id, res);
+
+    res.status(200).json({
+      _id: user._id,
+      fullName: user.fullName,
+      username: user.username,
+      profilePic: user.profilePic,
+    });
+  } catch (error) {
+    console.log("Error in login controller ", error.message);
+    res.status(500).json({ error: "Internal server error." });
+  }
 };
 const logout = (req, res) => {
   res.send("logoutUser");
