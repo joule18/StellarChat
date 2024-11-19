@@ -99,8 +99,15 @@ const SignUp = () => {
             selectedGender={inputs.gender}
           />
           <div>
-            <button className="btn btn-block btn-sm mt-4 bg-slate-950 hover:bg-slate-900 text-slate-200 border-none">
-              Sign Up
+            <button
+              className="btn btn-block btn-sm mt-4 bg-slate-950 hover:bg-slate-900 text-slate-200 border-none"
+              disabled={loading}
+            >
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Sign up"
+              )}
             </button>
           </div>
           <Link
